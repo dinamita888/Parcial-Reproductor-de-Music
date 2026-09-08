@@ -82,3 +82,4 @@ button, input { font: inherit; } button { cursor: pointer; }
 .authors { margin-top: 15px; color: #66777a; font-size: 10px; text-align: right; }
 .authors span { color: var(--accent); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 .authors i { margin: 0 7px; color: var(--accent); font-style: normal; }
+.authors { position: fixed; right: 12px; bottom: 10px; z-index: 10; margin: 0; border: 1px solid rgba(21,35,44,.12); border-radius: 999px; padding: 7px 11px; background: rgba(245,242,235,.94); box-shadow: 0 4px 14px rgba(21,35,44,.12); }
