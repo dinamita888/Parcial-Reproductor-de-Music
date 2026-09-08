@@ -20,4 +20,49 @@ button, input { font: inherit; } button { cursor: pointer; }
 /* Playlist, búsqueda, pistas activas y pie de la lista. */
 .playlist { padding: 36px 31px 25px; background: #fff; }.playlist-heading { display: flex; justify-content: space-between; align-items: start; margin-bottom: 26px; }.playlist h2 { color: var(--ink); font-size: 26px; }.more { border: 0; padding: 0; color: #8d999b; background: transparent; letter-spacing: 3px; }.playlist .overline { color: var(--accent); }.search { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid var(--line); padding: 9px 3px 11px; color: #829096; }.search span { font-size: 23px; }.search input { width: 100%; border: 0; outline: 0; color: var(--ink); background: transparent; font-size: 12px; }.search input::placeholder { color: #a2adae; }.track-list { display: grid; }.track { display: flex; align-items: center; gap: 13px; min-height: 70px; border: 0; border-bottom: 1px solid #e5e8e4; padding: 12px 3px; text-align: left; color: var(--ink); background: transparent; }.track:hover, .track.active { color: var(--accent); }.track-number { width: 22px; color: #a9b3b2; font-size: 11px; }.track-details { display: grid; flex: 1; gap: 5px; }.track-details strong { font-size: 13px; font-weight: 600; }.track-details small { color: #95a0a1; font-size: 10px; }.track-duration { color: #9ba5a5; font-size: 10px; }.playing-bars { display: none; align-items: end; gap: 2px; height: 13px; }.track.active .playing-bars { display: flex; }.track.active .track-duration { display: none; }.playing-bars i { width: 2px; height: 6px; background: var(--accent); }.playing-bars i:nth-child(2) { height: 12px; }.playing-bars i:nth-child(3) { height: 9px; }.playlist-footer { display: flex; align-items: center; gap: 8px; margin-top: 27px; color: #9ca6a5; font-size: 10px; }.footer-icon { color: var(--accent); font-size: 18px; }.footer-line { height: 1px; flex: 1; background: var(--line); }.keyboard-note { margin-top: 17px; color: #708083; font-size: 10px; text-align: right; }.keyboard-note span { margin-left: 12px; margin-right: 5px; border: 1px solid #aeb9b5; padding: 4px 6px; color: #55676c; font-size: 9px; }.track.hidden { display: none; }
 /* Adaptación para pantallas pequeñas. */
-+@media (max-width: 760px) { .music-app { width: min(100% - 24px, 540px); padding-top: 17px; }.header-meta { display: none; }.app-layout { grid-template-columns: 1fr; }.now-playing { padding: 27px 22px 23px; }.playlist { padding: 28px 22px 24px; }.artwork { height: 220px; margin-top: 22px; }.keyboard-note { display: none; } }
+@media (max-width: 760px) {
+	body { min-width: 320px; }
+	.music-app { width: 100%; padding: 16px 12px 24px; }
+	.app-header { margin: 0 4px 15px; }
+	.header-meta, .keyboard-note { display: none; }
+	.logo { font-size: 10px; letter-spacing: 2px; }
+	.logo-icon { width: 29px; height: 29px; font-size: 20px; }
+	.app-layout { display: block; min-height: 0; box-shadow: 0 12px 30px rgba(21,35,44,.16); }
+	.now-playing { padding: 22px 18px 19px; }
+	.section-topline { font-size: 9px; }
+	.artwork { height: min(58vw, 260px); min-height: 190px; margin: 20px 0 23px; }
+	.artwork-sun { width: 65px; height: 65px; top: 27px; }
+	.orbit-large { top: 55px; left: 28%; width: 140px; height: 140px; }
+	.orbit-small { top: 73px; left: 34%; width: 103px; height: 103px; }
+	.artwork-word { right: 17px; bottom: 17px; font-size: 9px; letter-spacing: 3px; }
+	.artwork-index { top: 15px; right: 17px; }
+	.overline { margin-bottom: 7px; font-size: 9px; letter-spacing: 1.5px; }
+	h1 { max-width: calc(100vw - 105px); font-size: clamp(22px, 7vw, 29px); line-height: 1.08; }
+	.artist { margin-top: 7px; font-size: 11px; }
+	.favorite { flex: 0 0 36px; width: 36px; height: 36px; }
+	.progress-area { margin-top: 25px; }
+	.player-controls { gap: 24px; margin: 15px 0 17px; }
+	.play { width: 54px; height: 54px; }
+	.skip { font-size: 19px; }
+	.bottom-controls { gap: 9px; padding-top: 14px; }
+	.mode-button { font-size: 10px; white-space: nowrap; }
+	.mode-button span { display: none; }
+	.volume { max-width: none; gap: 7px; }
+	.volume span { width: 19px; font-size: 10px; }
+	.playlist { padding: 23px 18px 20px; }
+	.playlist-heading { margin-bottom: 18px; }
+	.playlist h2 { font-size: 22px; }
+	.search { margin-bottom: 5px; padding: 8px 2px 9px; }
+	.track { min-height: 63px; gap: 10px; padding: 10px 2px; }
+	.track-details strong { font-size: 12px; }
+	.track-details small, .track-duration { font-size: 9px; }
+	.playlist-footer { margin-top: 20px; }
+}
+
+@media (max-width: 390px) {
+	.music-app { padding-inline: 8px; }
+	.now-playing, .playlist { padding-inline: 15px; }
+	.artwork { min-height: 180px; }
+	.track-number { width: 18px; }
+	.track-details strong { font-size: 11px; }
+}
