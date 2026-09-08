@@ -77,3 +77,8 @@ button, input { font: inherit; } button { cursor: pointer; }
 	.track:active { background: #fff4ef; }
 	.playlist-footer { padding-bottom: 2px; }
 }
+
+/* Autores alineados en la esquina inferior derecha. */
+.authors { margin-top: 15px; color: #66777a; font-size: 10px; text-align: right; }
+.authors span { color: var(--accent); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.authors i { margin: 0 7px; color: var(--accent); font-style: normal; }

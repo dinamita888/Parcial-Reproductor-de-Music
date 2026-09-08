@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#101820">
     <title>Atelier Audio | Reproductor</title>
     <!-- El parametro de version evita que el celular conserve CSS antiguo en cache. -->
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
     <!-- Contenedor general de toda la aplicación. -->
@@ -24,7 +24,7 @@
                 <div class="section-topline"><span>NOW PLAYING</span><span id="trackPosition">01 / 04</span></div>
                 <!-- Portada creada con CSS; no necesita una imagen externa. -->
                 <div class="artwork" id="artwork" aria-label="Portada abstracta"><div class="artwork-orbit orbit-large"></div><div class="artwork-orbit orbit-small"></div><div class="artwork-sun"></div><div class="artwork-word">ATELIER</div><div class="artwork-index" id="artworkIndex">01</div></div>
-                <div class="song-title-row"><div><p class="overline">SELECCIÓN PERSONAL</p><h1 id="titulo">Devil Doesn't Bargain</h1><p class="artist">Biblioteca local <span>•</span> Colección 2024</p></div><button class="favorite" id="favorite" type="button" aria-label="Añadir a favoritos" aria-pressed="false">♡</button></div>
+                <div class="song-title-row"><div><p class="overline">SELECCIÓN PERSONAL</p><h1 id="titulo">Devil Doesn't Bargain</h1><p class="artist">Biblioteca local <span>•</span> Colección 2026</p></div><button class="favorite" id="favorite" type="button" aria-label="Añadir a favoritos" aria-pressed="false">♡</button></div>
                 <!-- Elemento de audio oculto controlado desde JavaScript. -->
                 <audio id="audio"></audio>
                 <div class="progress-area"><input type="range" id="barra" value="0" min="0" max="100" step="0.1" aria-label="Progreso de reproducción"><div class="time-labels"><span id="tiempoActual">0:00</span><span id="duracion">0:00</span></div></div>
@@ -47,6 +47,9 @@
             </aside>
         </div>
         <footer class="keyboard-note"><span>SPACE</span> reproducir / pausar <span>← →</span> cambiar pista</footer>
+        <footer class="authors" aria-label="Autores">
+            <span>Autores:</span> Diana Cifuentes <i>•</i> Yuher Tovar
+        </footer>
     </main>
     <script src="script.js"></script>
 </body>
