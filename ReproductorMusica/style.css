@@ -66,3 +66,14 @@ button, input { font: inherit; } button { cursor: pointer; }
 	.track-number { width: 18px; }
 	.track-details strong { font-size: 11px; }
 }
+
+/* Acabado visual final para el formato de teléfono. */
+@media (max-width: 760px) {
+	body { background: #e2e8e3; background-image: none; }
+	.music-app { width: calc(100% - 24px); max-width: 520px; }
+	.app-layout { overflow: hidden; border-radius: 16px; }
+	.artwork { border-radius: 12px; }
+	.playlist { min-height: 390px; }
+	.track:active { background: #fff4ef; }
+	.playlist-footer { padding-bottom: 2px; }
+}
