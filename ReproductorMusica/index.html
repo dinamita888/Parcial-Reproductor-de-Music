@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101820">
+    <title>Atelier Audio | Reproductor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contenedor general de toda la aplicación. -->
+    <main class="music-app">
+        <!-- Marca y datos rápidos de la sesión. -->
+        <header class="app-header">
+            <div class="logo"><span class="logo-icon">a</span><span>ATELIER <b>AUDIO</b></span></div>
+            <div class="header-meta"><span class="live-dot"></span> Sesión local <span class="header-divider"></span> 04 pistas</div>
+        </header>
+
+        <!-- El layout se divide en reproductor principal y playlist. -->
+        <div class="app-layout">
+            <!-- Panel izquierdo: canción actual y controles de audio. -->
+            <section class="now-playing">
+                <div class="section-topline"><span>NOW PLAYING</span><span id="trackPosition">01 / 04</span></div>
+                <!-- Portada creada con CSS; no necesita una imagen externa. -->
+                <div class="artwork" id="artwork" aria-label="Portada abstracta"><div class="artwork-orbit orbit-large"></div><div class="artwork-orbit orbit-small"></div><div class="artwork-sun"></div><div class="artwork-word">ATELIER</div><div class="artwork-index" id="artworkIndex">01</div></div>
+                <div class="song-title-row"><div><p class="overline">SELECCIÓN PERSONAL</p><h1 id="titulo">Devil Doesn't Bargain</h1><p class="artist">Biblioteca local <span>•</span> Colección 2024</p></div><button class="favorite" id="favorite" type="button" aria-label="Añadir a favoritos" aria-pressed="false">♡</button></div>
+                <!-- Elemento de audio oculto controlado desde JavaScript. -->
+                <audio id="audio"></audio>
+                <div class="progress-area"><input type="range" id="barra" value="0" min="0" max="100" step="0.1" aria-label="Progreso de reproducción"><div class="time-labels"><span id="tiempoActual">0:00</span><span id="duracion">0:00</span></div></div>
+                <!-- Controles principales: anterior, reproducir/pausar y siguiente. -->
+                <div class="player-controls"><button id="anterior" class="skip" type="button" aria-label="Canción anterior">⏮</button><button id="play" class="play" type="button" aria-label="Reproducir">▶</button><button id="siguiente" class="skip" type="button" aria-label="Siguiente canción">⏭</button></div>
+                <!-- Modos especiales y control de volumen. Solo un modo puede estar activo. -->
+                <div class="bottom-controls"><button class="mode-button" id="shuffle" type="button" aria-pressed="false">⇄ <span>Aleatorio</span></button><div class="volume"><button id="mute" type="button" aria-label="Silenciar">◖</button><input type="range" id="volumen" min="0" max="100" value="80" aria-label="Volumen"><span id="volumenValor">80</span></div><button class="mode-button" id="repeat" type="button" aria-pressed="false">↻ <span>Repetir</span></button></div>
+            </section>
+            <!-- Panel derecho: búsqueda y selección de canciones. -->
+            <aside class="playlist">
+                <div class="playlist-heading"><div><p class="overline">TU COLECCIÓN</p><h2>Lista de reproducción</h2></div><button class="more" type="button" aria-label="Más opciones">•••</button></div>
+                <label class="search"><span>⌕</span><input id="buscar" type="search" placeholder="Buscar una pista" aria-label="Buscar una pista"></label>
+                <div class="track-list">
+                    <button class="track active" data-index="0" type="button"><span class="track-number">01</span><span class="track-details"><strong>Devil Doesn't Bargain</strong><small>Alex Benjamin</small></span><span class="track-duration">3:32</span><span class="playing-bars"><i></i><i></i><i></i></span></button>
+                    <button class="track" data-index="1" type="button"><span class="track-number">02</span><span class="track-details"><strong>Ghost in the Mirror</strong><small>Voces nocturnas</small></span><span class="track-duration">3:18</span><span class="playing-bars"><i></i><i></i><i></i></span></button>
+                    <button class="track" data-index="2" type="button"><span class="track-number">03</span><span class="track-details"><strong>Mil estrellas</strong><small>Sesión acústica</small></span><span class="track-duration">4:06</span><span class="playing-bars"><i></i><i></i><i></i></span></button>
+                    <button class="track" data-index="3" type="button"><span class="track-number">04</span><span class="track-details"><strong>Una Vida Buena</strong><small>Domingo lento</small></span><span class="track-duration">3:44</span><span class="playing-bars"><i></i><i></i><i></i></span></button>
+                </div>
+                <div class="playlist-footer"><span class="footer-icon">♫</span><span id="queueStatus">Reproducción continua</span><span class="footer-line"></span><span>MP3</span></div>
+            </aside>
+        </div>
+        <footer class="keyboard-note"><span>SPACE</span> reproducir / pausar <span>← →</span> cambiar pista</footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
